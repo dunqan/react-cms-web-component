@@ -16,38 +16,6 @@ module.exports = merge(base, {
     chunkFilename: 'static/js/[name].chunk.[hash:8].js',
     path: path.resolve(__dirname, 'build'),
   },
-  module: {
-    rules: [
-      {
-        // css-loader
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
-      },
-      {
-        // sass/scss loader to load sass-scss style files
-        test: /\.(sass|scss)$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader',
-          'sass-loader',
-        ],
-      },
-      {
-        // copies image files to assets folder in destination folder - build
-        test: /\.(svg|png|jpg|jpeg|gif|mp3|ico)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[hash:8].[ext]',
-              outputPath: 'static/assets',
-            },
-          },
-        ],
-      },
-    ],
-  },
   optimization: {
     minimizer: [
       new TerserWeppackPlugin({
@@ -76,32 +44,7 @@ module.exports = merge(base, {
       }),
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'public', 'index.html'),
-      favicon: path.resolve(__dirname, 'public', 'favicon.ico'),
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeRedundantAtributes: true,
-        useShortDoctype: true,
-        removeEmptyAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        keepClosingSlash: true,
-        minifyJS: true,
-        minifyCSS: true,
-        minifyURLs: true,
-      },
-    }),
-    new MiniCssExtractPlugin({
-      filename: 'static/css/[name].[hash:8].css',
-    }),
-    new OptimizeCSSAssetsPlugin({
-      cssProcessorOptions: {
-        parser: postcssSafeParser,
-        map: true,
-      },
-    }),
+ plugins: [
     new CleanWebpackPlugin(),
   ],
 })

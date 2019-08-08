@@ -1,9 +1,9 @@
 {
-  "name": "react-boiler",
+  "name": "react-cms-web-component",
   "version": "1.0.0",
-  "description": "minimal react boilerplate with most features",
+  "description": "minimal react based cms web component for spartacus",
   "main": "index.js",
-  "repository": "https://github.com/sumitjoshi97/react-boiler.git",
+  "repository": "https://github.com/dunqan/react-cms-web-component",
   "author": "Sj",
   "license": "MIT",
   "private": false,

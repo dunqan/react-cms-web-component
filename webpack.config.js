@@ -1,15 +1,33 @@
-const path = require('path')
-const TerserWeppackPlugin = require('terser-webpack-plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
-const merge = require('webpack-merge')
-const base = require('./webpack.config.base')
+const path = require('path');
+const TerserWeppackPlugin = require('terser-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-module.exports = merge(base, {
+module.exports = {
+  entry: './src/index.js',
+
   mode: 'production',
   devtool: 'source-map',
+
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        include: /src/,
+        loader: 'babel-loader',
+      },
+      {
+        test: /\.html$/,
+        loader: 'html-loader',
+      },
+    ],
+  },
+
+  resolve: {
+    extensions: ['.js', '.json', '.jsx'],
+  },
+
   output: {
-    filename: 'static/js/main.js',
-    chunkFilename: 'static/js/[name].chunk.[hash:8].js',
+    filename: 'cms-web-components.js',
     path: path.resolve(__dirname, 'build'),
   },
   optimization: {
@@ -40,7 +58,5 @@ module.exports = merge(base, {
       }),
     ],
   },
- plugins: [
-    new CleanWebpackPlugin(),
-  ],
-})
+  plugins: [new CleanWebpackPlugin()],
+};

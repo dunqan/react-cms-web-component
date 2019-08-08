@@ -7,7 +7,7 @@
   "author": "dunqan",
   "private": false,
   "scripts": {
-    "build": "webpack --config webpack.config.prod.js"
+    "build": "webpack --config webpack.config.js"
   },
   "dependencies": {
     "react": "^16.8.6",

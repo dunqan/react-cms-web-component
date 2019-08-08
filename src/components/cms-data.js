@@ -1,12 +1,9 @@
 import React from 'react';
 
 export class CmsData extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: undefined,
-    };
-  }
+  state = {
+    data: undefined,
+  };
 
   componentDidMount() {
     this.subscription = this.props.CmsComponentData.data$.subscribe(data =>

@@ -10,7 +10,7 @@ https://github.com/SAP/cloud-commerce-spartacus-storefront
 
 https://sap.github.io/cloud-commerce-spartacus-storefront-docs/customizing-cms-components/
 
-##Build steps
+## Build steps
 
 `yarn && yarn buid`
 

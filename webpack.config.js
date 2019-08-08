@@ -3,7 +3,11 @@ const TerserWeppackPlugin = require('terser-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    'cms-data': './src/cms-data.js',
+    breadcrumbs: './src/breadcrumbs.js',
+    bundle: ['./src/cms-data.js', './src/breadcrumbs.js'],
+  },
 
   mode: 'production',
   devtool: 'source-map',
@@ -27,7 +31,7 @@ module.exports = {
   },
 
   output: {
-    filename: 'cms-web-components.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'build'),
   },
   optimization: {

@@ -16,8 +16,9 @@ https://sap.github.io/cloud-commerce-spartacus-storefront-docs/customizing-cms-c
 
 ## About the examples
 
-Build onill result in three JS files:on
-1. . `cms-data.js. `
+Build will result in three JS files:
+
+1. `cms-data.js`
 
     Condains Cms data example web component implementation. 
     It demonstrates `CmsComponentData` passed from Spartacus and displays it.
@@ -39,25 +40,27 @@ Build onill result in three JS files:on
     
     ```typescript
     {
-          cmsComponents: {
-            BreadcrumbComponent: {
-              component: 'assets/breadcrumbs.js#breadcrumbs-cmp',
-            },
-            SimpleResponsiveBannerComponent: {
-              component: 'assets/cms-data.js#cms-data'
-            }
-          },
+      cmsComponents: {
+        BreadcrumbComponent: {
+          component: 'assets/breadcrumbs.js#breadcrumbs-cmp',
+        },
+        CMSParagraphComponent: {
+          component: 'assets/cms-data.js#cms-data'
+        }
+      }
+    }
     ```
     
     or using bundled version:
     ```typescript
     {
-          cmsComponents: {
-            BreadcrumbComponent: {
-              component: 'assets/bundle.js#breadcrumb-cmp',
-            },
-            SimpleResponsiveBannerComponent: {
-              component: 'assets/bundle.js#cms-data'
-            }
-          },
+      cmsComponents: {
+        BreadcrumbComponent: {
+          component: 'assets/bundle.js#breadcrumb-cmp',
+        },
+        CMSParagraphComponent: {
+          component: 'assets/bundle.js#cms-data'
+        }
+      }
+    }
     ```
